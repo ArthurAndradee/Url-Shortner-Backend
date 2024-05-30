@@ -1,12 +1,18 @@
-// index.js
-const express = require('express');
+import express from 'express';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
+dotenv.config({ path: './.env' });
+
+console.log(process.env.MONGO_URI)
+
+connectDB();
+
 const app = express();
-const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+import urlsRouter from './routes/urls.js';
+app.use('/api', urlsRouter);
+
+app.listen(5000, () => console.log("Server is running"))

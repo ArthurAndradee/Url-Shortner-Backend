@@ -2,6 +2,7 @@
   "name": "url-shortner",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,14 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "nanoid": "^5.0.7",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.2"
   }
 }
